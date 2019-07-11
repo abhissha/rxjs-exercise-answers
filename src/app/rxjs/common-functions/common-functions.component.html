@@ -1,0 +1,67 @@
+<div class="card">
+	<div class="card-header">
+		1. Display below, all of the "names" of menu items with the isSpecial flag set to true
+	</div>
+	<div class="card-body">
+		<h5 class="card-title">Hint</h5>
+		<p class="card-text">
+			Put your business logic into the common-function.service.ts file, data can be found in data/menu-items.data.ts<br>
+			*Extra Credit* don't call the .subscribe() method!
+		</p>
+		<ng-container *ngIf="specialItems$">
+			<ul *ngFor="let specialItem of specialItems$ | async">
+				<li>{{ specialItem.name }}</li>
+			</ul>
+		</ng-container>
+	</div>
+</div>
+
+<div class="card">
+	<div class="card-header">
+		2. Grab the Id in the url and use it to query the menu-items.ts file for the specified Id and display the name,
+		description and price below
+	</div>
+	<div class="card-body">
+		<h5 class="card-title">Hint</h5>
+		<p class="card-text">Use the queryParamMap and menuItemData provided in the common-functions.service</p>
+		<p class="card-text" *ngIf="menuItem$ | async as menuItem">
+			Name: {{ menuItem.name }}<br>
+			Description: {{ menuItem.description }}<br>
+			Price: {{ menuItem.price }}
+		</p>
+	</div>
+</div>
+
+<div class="card">
+	<div class="card-header">
+		3. Wire up the two dropdowns below so that the top selects a state, and the bottom shows citys corresponding to
+		that state
+	</div>
+	<div class="card-body">
+		<h5 class="card-title">Hint</h5>
+		<p class="card-text">State and City data is provided in the data folder</p>
+		<div class="row">
+			<div class="col-sm-1">
+				<label>State: </label>
+			</div>
+			<div class="col-sm-3">
+				<select class="form-control" (change)="onStateSelected($event.target.selectedIndex)">
+					<option value="null"></option>
+					<option values="state.id" *ngFor="let state of states$ | async">{{ state.name }}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-1">
+				<label>City: </label>
+			</div>
+			<div class="col-sm-3">
+				<select class="form-control">
+					<option value="null"></option>
+					<option value="city.id" *ngFor="let city of cities$ | async">{{ city.name }}</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>

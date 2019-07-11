@@ -6,6 +6,7 @@ import { SubjectExampleComponent } from './rxjs/subject/subject-example.componen
 import { SimpleObservableRxjsComponent } from "./rxjs/observable/simple-observable-rxjs.component";
 import { BehaviorSubjectExampleComponent } from "./rxjs/behaviorsubject/behavior-subject-example.component";
 import { PagingExampleComponent } from "./rxjs/paging-example/paging-example.component";
+import { CommonFunctionsComponent } from "./rxjs/common-functions/common-functions.component";
 
 
 export const routes: Routes = [
@@ -16,4 +17,5 @@ export const routes: Routes = [
   { path: 'badpractice', component: BadPracticeComponent },
   { path: 'bestpractice', component: BestPracticeComponent },  
   { path: 'empty', component: EmptyComponent },
+  { path: 'commonfunctions/:id', component: CommonFunctionsComponent }
 ]
