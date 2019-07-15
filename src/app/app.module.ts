@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
@@ -13,6 +13,7 @@ import { SubjectExampleComponent } from './rxjs/subject/subject-example.componen
 import { SimpleObservableRxjsComponent } from "./rxjs/observable/simple-observable-rxjs.component";
 import { BehaviorSubjectExampleComponent } from "./rxjs/behaviorsubject/behavior-subject-example.component";
 import { PagingExampleComponent } from './rxjs/paging-example/paging-example.component';
+import { CommonFunctionsComponent } from './rxjs/common-functions/common-functions.component';
 
 @NgModule({
   imports:      
@@ -31,7 +32,8 @@ import { PagingExampleComponent } from './rxjs/paging-example/paging-example.com
     SubjectExampleComponent,
     SimpleObservableRxjsComponent,
     BehaviorSubjectExampleComponent,
-    PagingExampleComponent
+    PagingExampleComponent,
+    CommonFunctionsComponent
   ],
   exports:      
   [     
