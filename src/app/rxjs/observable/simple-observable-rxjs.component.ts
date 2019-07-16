@@ -52,7 +52,9 @@ export class SimpleObservableRxjsComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.$btnClick = fromEvent(this.btnClick.nativeElement, 'click');
-    this.$btnClick.subscribe(x => console.log(x));
+    this.$btnClick.subscribe(x => {
+      console.log(`x cordinates: ${x.clientX} y cordinates: ${x.clientY}`)
+    });
 
     this.$inputChange = fromEvent(this.txtInput.nativeElement, 'keyup');
     this.$inputChange.subscribe(e => console.log(e.target.value));
